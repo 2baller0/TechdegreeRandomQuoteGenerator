@@ -11,6 +11,7 @@ project 1 - A Random Quote Generator
  * `quotes` array 
 ***/
 
+//Added an array with five objects containing the quotes and their information.
 const quotes = [
   {
     quote: "Life is like a box of chocolates. You never know what you're gonna get.",
@@ -47,6 +48,8 @@ const quotes = [
  * `getRandomQuote` function
 ***/
 
+//Used the math.random function and to create a random number generator to represent each object in the array.
+
 function getRandomQuote() {
   let randomNumber = Math.floor(Math.random() * quotes.length);
   return (
@@ -57,6 +60,9 @@ function getRandomQuote() {
 /***
  * `printQuote` function
 ***/
+
+//Created multiple variables and used conditional statements to make sure the generator met requirements of all quotes.
+//The conditional statements ensure that if one quote doesn't have info available, that info will be left out instead of 'undefined'.
 
 function printQuote() {
   let chosenQuote = getRandomQuote();
