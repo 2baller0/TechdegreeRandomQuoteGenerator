@@ -15,32 +15,30 @@ const quotes = [
   {
     quote: "Life is like a box of chocolates. You never know what you're gonna get.",
     author: "Tom Hanks",
-    date: "1994",
-    origin: "Forrest Gump"
+    year: "1994",
+    citation: "Forrest Gump"
   },
   {
     quote: "Seize the day, boys. Make your lives extraordinary.",
     author: "Robin Williams",
-    date: "1989",
-    origin: "Dead Poets Society"
+    citation: "Dead Poets Society"
   },
   {
     quote: "Keep your friends close, but your enemies closer.",
     author: "Al Pacino",
-    date: "1974",
-    origin: "The Godfather part II"
+    year: "1974",
   },
   {
     quote: "With great power comes great responsibility.",
     author: "Cliff Robertson",
-    date: "2002",
-    origin: "Spider-Man"
+    year: "2002",
+    citation: "Spider-Man"
   },
   {
     quote: "I don't have friends. I got family",
     author: "Vin Diesel",
-    date: "2015",
-    origin: "Furious 7"
+    year: "2015",
+    citation: "Furious 7"
   }
 ];
 
@@ -50,7 +48,7 @@ const quotes = [
 ***/
 
 function getRandomQuote() {
-  let randomNumber = Math.floor(Math.random() * (quotes.length));
+  let randomNumber = Math.floor(Math.random() * quotes.length);
   return (
     quotes[randomNumber]
   );
@@ -60,9 +58,22 @@ function getRandomQuote() {
  * `printQuote` function
 ***/
 
+function printQuote() {
+  let chosenQuote = getRandomQuote();
+  let quoteText = 
+    '<p class="quote">' + chosenQuote.quote + '</p>';
+      quoteText += '<p class="source"> ' + chosenQuote.author + ' ';
+      if (chosenQuote.citation) {
+        quoteText += '<span class="citation"> ' + chosenQuote.citation + '</span>';
+      }
+      if (chosenQuote.year) {
+        quoteText += '<span class="year"> ' + chosenQuote.year + '</span>';
+      }
+    '</p>';
+ document.getElementById('quote-box').innerHTML = quoteText;
+    };
 
-
-
+     
 /***
  * click event listener for the print quote button
  * DO NOT CHANGE THE CODE BELOW!!
